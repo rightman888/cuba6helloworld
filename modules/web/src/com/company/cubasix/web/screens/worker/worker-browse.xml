@@ -33,18 +33,18 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="firstName"/>
-                <column id="middleName"/>
-                <column id="lastName"/>
-                <column id="rate"/>
+                <column id="firstName" caption="msg://FirstName"/>
+                <column id="middleName" caption="msg://MiddleName"/>
+                <column id="lastName" caption="msg://LastName"/>
+                <column id="rate" caption="msg://HourlyRate"/>
             </columns>
             <rows datasource="workersDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="workersTable.create"/>
-                <button id="editBtn" action="workersTable.edit"/>
-                <button id="removeBtn" action="workersTable.remove"/>
+                <button id="createBtn" action="workersTable.create" caption="msg://CreateWorker"/>
+                <button id="editBtn" action="workersTable.edit" caption="msg://EditWorker"/>
+                <button id="removeBtn" action="workersTable.remove" caption="msg://DeleteWorker"/>
             </buttonsPanel>
         </groupTable>
     </layout>

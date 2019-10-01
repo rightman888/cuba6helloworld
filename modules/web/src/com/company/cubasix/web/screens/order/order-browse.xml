@@ -33,21 +33,21 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="description"/>
-                <column id="startDate"/>
-                <column id="endDate"/>
-                <column id="customer"/>
-                <column id="worker"/>
-                <column id="totalCost"/>
-                <column id="status"/>
+                <column id="description" caption="msg://description"/>
+                <column id="startDate" caption="msg://startDate"/>
+                <column id="endDate" caption="msg://endDate"/>
+                <column id="customer" caption="msg://customer"/>
+                <column id="worker" caption="msg://worker"/>
+                <column id="totalCost" caption="msg://totalCost"/>
+                <column id="status" caption="msg://status"/>
             </columns>
             <rows datasource="ordersDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="ordersTable.create"/>
-                <button id="editBtn" action="ordersTable.edit"/>
-                <button id="removeBtn" action="ordersTable.remove"/>
+                <button id="createBtn" action="ordersTable.create" caption="msg://createOrder"/>
+                <button id="editBtn" action="ordersTable.edit" caption="msg://editOrder"/>
+                <button id="removeBtn" action="ordersTable.remove" caption="msg://deleteOrder"/>
             </buttonsPanel>
         </groupTable>
     </layout>

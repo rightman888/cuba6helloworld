@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
-@NamePattern("%s %s %s|firstName, lastName, middleName")
+@NamePattern("%s %s %s|firstName,lastName,middleName")
 @Table(name = "CUBASIX_CUSTOMER")
 @Entity(name = "cubasix$Customer")
 public class Customer extends StandardEntity {

@@ -6,7 +6,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import javax.persistence.*;
 import java.util.Date;
 
-@NamePattern("Order %s (%s)|worker, startDate")
+@NamePattern("Order %s (%s)|worker,startDate")
 @Table(name = "CUBASIX_ORDER")
 @Entity(name = "cubasix$Order")
 public class Order extends StandardEntity {
