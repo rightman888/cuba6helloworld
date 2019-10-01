@@ -1,0 +1,2 @@
+alter table CUBASIX_ORDER add constraint FK_CUBASIX_ORDER_ON_WORKER foreign key (WORKER_ID) references CUBASIX_WORKER(ID);
+create index IDX_CUBASIX_ORDER_ON_WORKER on CUBASIX_ORDER (WORKER_ID);

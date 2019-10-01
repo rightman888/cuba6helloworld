@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="cubasix$Customer" name="customer-view">
+        <property name="firstName"/>
+        <property name="middleName"/>
+        <property name="lastName"/>
+        <property name="phoneNumber"/>
+        <property name="orders" view="_minimal"/>
+    </view>
+    <view entity="cubasix$Order" name="order-view">
+        <property name="description"/>
+        <property name="startDate"/>
+        <property name="endDate"/>
+        <property name="customer" view="_minimal"/>
+        <property name="worker" view="_minimal"/>
+        <property name="totalCost"/>
+        <property name="status"/>
+    </view>
+    <view entity="cubasix$Worker" name="worker-view">
+        <property name="firstName"/>
+        <property name="middleName"/>
+        <property name="lastName"/>
+        <property name="rate"/>
+        <property name="orders" view="_minimal"/>
+    </view>
+</views>

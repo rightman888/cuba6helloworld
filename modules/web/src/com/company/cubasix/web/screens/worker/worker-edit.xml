@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.cubasix.web.screens.worker.WorkerEdit"
+        datasource="workerDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cubasix.web.screens.worker">
+    <dsContext>
+        <datasource id="workerDs"
+                    class="com.company.cubasix.entity.Worker"
+                    view="worker-view">
+            <collectionDatasource id="ordersDs" property="orders"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions" spacing="true">
+        <fieldGroup id="fieldGroup" datasource="workerDs">
+            <column width="250px">
+                <field property="firstName"/>
+                <field property="middleName"/>
+                <field property="lastName"/>
+                <field property="rate"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="ordersBox" caption="msg://com.company.cubasix.entity/Worker.orders">
+            <table id="ordersTable" width="100%" height="200px">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="worker"/>
+                </columns>
+                <rows datasource="ordersDs"/>
+                <buttonsPanel>
+                    <button action="ordersTable.create"/>
+                    <button action="ordersTable.edit"/>
+                    <button action="ordersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

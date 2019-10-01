@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.cubasix.web.screens.worker.WorkerBrowse"
+        focusComponent="workersTable"
+        lookupComponent="workersTable"
+        messagesPack="com.company.cubasix.web.screens.worker">
+    <dsContext>
+        <groupDatasource id="workersDs"
+                         class="com.company.cubasix.entity.Worker"
+                         view="worker-view">
+            <query>
+                <![CDATA[select e from cubasix$Worker e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="workersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="workersTable"
+                datasource="workersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="workersTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="firstName"/>
+                <column id="middleName"/>
+                <column id="lastName"/>
+                <column id="rate"/>
+            </columns>
+            <rows datasource="workersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="workersTable.create"/>
+                <button id="editBtn" action="workersTable.edit"/>
+                <button id="removeBtn" action="workersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
